@@ -37,8 +37,7 @@
  {{-- Editar --}}
  <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-warning btn-xs">Editar</a>
  {{-- Eliminar --}}
-{{-- Si existen pedidos con este producto no se puede eliminar --}}
- @if ($producto->clases->count() == 0)
+
 <form action="{{ route('productos.destroy', $producto->id) }}" method="POST">
 @csrf
 @method('DELETE')
@@ -52,7 +51,6 @@
  </div>
  </div>
  </div>
- @endif
  @endforeach
  </div>
  </div>
